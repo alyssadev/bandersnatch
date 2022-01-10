@@ -18,6 +18,6 @@ for _id,segment in smap.items():
   if "endTimeMs" in segment:
     t = " -t {}".format((segment["endTimeMs"]-segment["startTimeMs"])/1000)
   try:
-    print("""</dev/null ffmpeg{} -y -i Black.Mirror.Bandersnatch.2018.720p.WEB-DL.x264.DUAL.mp4 -c:v libx264 -c:a aac {} {}.mkv""".format(ss, t, _id))
+    print("""</dev/null ffmpeg{} -y -i Black.Mirror.Bandersnatch.2018.720p.WEB-DL.x264.DUAL.mp4 -c:v libx264 -c:a aac {} segments/{}.mkv""".format(ss, t, _id))
   except BrokenPipeError:
     break
